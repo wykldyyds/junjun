@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romantic Cottage</title>
+<style>
+    body {
+        background-color: #f8f8f8;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .heart {
+        font-size: 20px;
+        color: red;
+        position: absolute;
+        animation: falling 2s linear infinite;
+    }
+
+    @keyframes falling {
+        0% { transform: translateY(-10vh) rotate(0); }
+        100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .rose {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .petal {
+        position: absolute;
+        width: 40px;
+        height: 80px;
+        background-color: #fcb9b2;
+        border-radius: 50%;
+        transform-origin: 50% 100%;
+    }
+
+    .leaf {
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        background-color: #78c16e;
+        border-radius: 50%;
+    }
+
+    .stem {
+        position: absolute;
+        width: 20px;
+        height: 100px;
+        background-color: #78c16e;
+    }
+
+    /* Petal positioning */
+    .petal:nth-child(1) { transform: rotate(0deg) translate(0, -40px); }
+    .petal:nth-child(2) { transform: rotate(30deg) translate(20px, -30px); }
+    .petal:nth-child(3) { transform: rotate(60deg) translate(35px, 0); }
+    .petal:nth-child(4) { transform: rotate(90deg) translate(30px, 30px); }
+    .petal:nth-child(5) { transform: rotate(120deg) translate(15px, 40px); }
+    .petal:nth-child(6) { transform: rotate(150deg) translate(0, 35px); }
+    .petal:nth-child(7) { transform: rotate(180deg) translate(-15px, 40px); }
+    .petal:nth-child(8) { transform: rotate(210deg) translate(-30px, 30px); }
+    .petal:nth-child(9) { transform: rotate(240deg) translate(-35px, 0); }
+    .petal:nth-child(10) { transform: rotate(270deg) translate(-30px, -30px); }
+    .petal:nth-child(11) { transform: rotate(300deg) translate(-20px, -30px); }
+    .petal:nth-child(12) { transform: rotate(330deg) translate(0, -40px); }
+    
+    /* Leaf positioning */
+    .leaf { transform: rotate(-30deg) translate(50px, 60px); }
+    .stem { transform: translate(80px, 100px); }
+
+    .happy-womens-day {
+        font-size: 36px;
+        color: #e4007f;
+        position: absolute;
+        top: 50%;
+        left: 33.3%;
+        transform: translate(-50%, -50%);
+        animation: jump 1s infinite;
+    }
+
+    .happy-womens-day:nth-child(2) {
+        left: 50%;
+    }
+
+    .jump {
+        font-size: 36px;
+        color: #e4007f;
+        position: absolute;
+        top: 50%;
+        left: 66.6%;
+        transform: translate(-50%, -50%);
+        animation: jump 1s infinite;
+    }
+
+    @keyframes jump {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+</style>
+</head>
+<body>
+    <div class="rose">
+        <!-- Petals -->
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        
+        <!-- Leaves -->
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+
+        <!-- Stem -->
+        <div class="stem"></div>
+    </div>
+
+    <div class="happy-womens-day">三八妇女节</div>
+    <div class="jump">快乐</div>
+    
+    <script>
+        // Function to generate random hearts and move them down the screen
+        function createHearts() {
+            for (let i = 0; i < 100; i++) {
+                let heart = document.createElement('div');
+                heart.innerHTML = '&#10084;';
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 1.5 + 1) + 's';
+                document.body.appendChild(heart);
+            }
+        }
+
+        createHearts();
+    </script>
+</body>
+</html>
